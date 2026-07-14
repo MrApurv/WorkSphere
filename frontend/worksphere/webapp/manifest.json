@@ -1,7 +1,7 @@
 {
   "_version": "1.86.0",
   "sap.app": {
-    "id": "com.apurv.com.apurv.worksphere",
+    "id": "com.apurv.worksphere",
     "type": "application",
     "i18n": "i18n/i18n.properties",
     "applicationVersion": {
@@ -13,7 +13,7 @@
     "sourceTemplate": {
       "id": "@sap/generator-fiori:basic",
       "version": "1.28.0",
-      "toolsId": "1e9ffa9d-de70-4d07-963b-b4a8b59847b3"
+      "toolsId": "049eee8d-e63d-49e1-bfa3-4d4b102d8d55"
     }
   },
   "sap.ui": {
@@ -49,7 +49,7 @@
       "i18n": {
         "type": "sap.ui.model.resource.ResourceModel",
         "settings": {
-          "bundleName": "com.apurv.com.apurv.worksphere.i18n.i18n"
+          "bundleName": "com.apurv.worksphere.i18n.i18n"
         }
       }
     },
@@ -68,9 +68,9 @@
         "transition": "slide",
         "type": "View",
         "viewType": "XML",
-        "path": "com.apurv.com.apurv.worksphere.view",
+        "path": "com.apurv.worksphere.view",
         "async": true,
-        "viewPath": "com.apurv.com.apurv.worksphere.view"
+        "viewPath": "com.apurv.worksphere.view"
       },
       "routes": [
         {
@@ -89,7 +89,7 @@
       }
     },
     "rootView": {
-      "viewName": "com.apurv.com.apurv.worksphere.view.App",
+      "viewName": "com.apurv.worksphere.view.App",
       "type": "XML",
       "id": "App",
       "async": true

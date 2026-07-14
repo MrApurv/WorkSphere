@@ -1,7 +1,7 @@
 {
-  "name": "com.apurv.worksphere",
+  "name": "worksphere",
   "version": "0.0.1",
-  "description": "AI-powered enterprise employee management platform built with SAPUI5, OData, RAP and AI integration.",
+  "description": "AI-powered Enterprise Employee Management Platform",
   "keywords": [
     "ui5",
     "openui5",

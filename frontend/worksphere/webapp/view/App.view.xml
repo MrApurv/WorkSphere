@@ -1,4 +1,4 @@
-<mvc:View controllerName="com.apurv.com.apurv.worksphere.controller.App"
+<mvc:View controllerName="com.apurv.worksphere.controller.App"
     xmlns:mvc="sap.ui.core.mvc"
     xmlns="sap.m">
     <Page id="page" title="{i18n>title}">
