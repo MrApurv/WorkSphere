@@ -3,7 +3,7 @@ sap.ui.define([
 ], (Controller) => {
     "use strict";
 
-    return Controller.extend("com.apurv.com.apurv.worksphere.controller.App", {
+    return Controller.extend("com.apurv.worksphere.controller.App", {
         onInit() {
         }
     });

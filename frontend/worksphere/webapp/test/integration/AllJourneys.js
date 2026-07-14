@@ -7,7 +7,7 @@ sap.ui.define([
 
 	Opa5.extendConfig({
 		arrangements: new Startup(),
-		viewNamespace: "com.apurv.com.apurv.worksphere.view.",
+		viewNamespace: "com.apurv.worksphere.view.",
 		autoWait: true
 	});
 });

@@ -1,10 +1,10 @@
 sap.ui.define([
     "sap/ui/core/UIComponent",
-    "com/apurv/com/apurv/worksphere/model/models"
+    "com/apurv/worksphere/model/models"
 ], (UIComponent, models) => {
     "use strict";
 
-    return UIComponent.extend("com.apurv.com.apurv.worksphere.Component", {
+    return UIComponent.extend("com.apurv.worksphere.Component", {
         metadata: {
             manifest: "json",
             interfaces: [

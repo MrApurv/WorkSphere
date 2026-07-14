@@ -14,7 +14,7 @@ sap.ui.define([
 			// start the app UI component
 			this.iStartMyUIComponent({
 				componentConfig: {
-					name: "com.apurv.com.apurv.worksphere",
+					name: "com.apurv.worksphere",
 					async: true
 				},
 				hash: oOptions.hash,

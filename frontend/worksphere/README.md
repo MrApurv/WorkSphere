@@ -1,14 +1,14 @@
 ## Application Details
 |               |
 | ------------- |
-|**Generation Date and Time**<br>Mon Jul 13 2026 22:34:52 GMT+0530 (India Standard Time)|
+|**Generation Date and Time**<br>Tue Jul 14 2026 10:39:03 GMT+0530 (India Standard Time)|
 |**App Generator**<br>SAP Fiori Application Generator|
 |**App Generator Version**<br>1.28.0|
 |**Generation Platform**<br>Visual Studio Code|
 |**Template Used**<br>Basic|
 |**Service Type**<br>None|
 |**Service URL**<br>N/A|
-|**Module Name**<br>com.apurv.worksphere|
+|**Module Name**<br>worksphere|
 |**Application Title**<br>WorkSphere|
 |**Namespace**<br>com.apurv|
 |**UI5 Theme**<br>sap_horizon|
@@ -16,9 +16,9 @@
 |**Enable TypeScript**<br>False|
 |**Add Eslint configuration**<br>True, see https://www.npmjs.com/package/@sap-ux/eslint-plugin-fiori-tools#rules for the eslint rules.|
 
-## com.apurv.worksphere
+## worksphere
 
-AI-powered enterprise employee management platform built with SAPUI5, OData, RAP and AI integration.
+AI-powered Enterprise Employee Management Platform
 
 ### Starting the generated app
 

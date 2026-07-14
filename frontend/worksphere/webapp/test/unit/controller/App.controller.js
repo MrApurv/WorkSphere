@@ -1,7 +1,7 @@
 /*global QUnit*/
 
 sap.ui.define([
-	"com/apurv/com/apurv/worksphere/controller/App.controller"
+	"com/apurv/worksphere/controller/App.controller"
 ], function (Controller) {
 	"use strict";
 
