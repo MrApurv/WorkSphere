@@ -439,5 +439,3 @@ Reusable Enterprise Layout
 
 ---
 
-# Git Commands
-
