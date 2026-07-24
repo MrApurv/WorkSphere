@@ -1,6 +1,77 @@
 <mvc:View controllerName="com.apurv.worksphere.controller.App"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m">
-    <Page id="page" title="{i18n>title}">
-    </Page>
+    xmlns="sap.m"
+    xmlns:tnt="sap.tnt"
+    xmlns:f="sap.f">
+
+    <tnt:ToolPage id="toolPage" sideExpanded="false">
+
+        <tnt:header>
+            <!-- ShellBar -->
+            <f:ShellBar
+                id="shellBar"
+                title="WorkSphere"
+                showMenuButton="true"
+                showSearch="true"
+                showNotifications="true"
+                showProductSwitcher="false"
+                menuButtonPressed=".onMenuButtonPress"
+                searchButtonPressed=".onSearchPress"
+                notificationsPressed=".onNotificationPress">
+
+                <f:profile>
+                    <Avatar
+                        initials="AN"
+                        displaySize="XS" />
+                </f:profile>
+
+            </f:ShellBar>
+        </tnt:header>
+
+        <tnt:sideContent>
+
+            <tnt:SideNavigation id="sideNavigation" expanded="false">
+
+                <tnt:NavigationList>
+
+                    <tnt:NavigationListItem
+                        text="Dashboard"
+                        icon="sap-icon://home" />
+
+                    <tnt:NavigationListItem
+                        text="Employees"
+                        icon="sap-icon://employee" />
+
+                    <tnt:NavigationListItem
+                        text="Projects"
+                        icon="sap-icon://project-definition-triangle-2" />
+
+                    <tnt:NavigationListItem
+                        text="Assets"
+                        icon="sap-icon://laptop" />
+
+                    <tnt:NavigationListItem
+                        text="Reports"
+                        icon="sap-icon://business-objects-experience" />
+
+                    <tnt:NavigationListItem
+                        text="Settings"
+                        icon="sap-icon://action-settings" />
+
+                </tnt:NavigationList>
+
+            </tnt:SideNavigation>
+
+        </tnt:sideContent>
+
+        <tnt:mainContents>
+            <Page title="Dashboard">
+                <content>
+                    <Text text="Welcome to WorkSphere!" />
+                </content>
+            </Page>
+        </tnt:mainContents>
+
+    </tnt:ToolPage>
+
 </mvc:View>
