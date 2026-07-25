@@ -1,0 +1,64 @@
+{
+    "users": [
+        {
+            "id": "USR1001",
+            "employeeId": "EMP1001",
+            "firstName": "Aarav",
+            "lastName": "Sharma",
+            "displayName": "Aarav Sharma",
+            "email": "admin@worksphere.com",
+            "password": "Admin@12345",
+            "roleId": "ROLE_ADMIN",
+            "tenantId": "TENANT1001",
+            "designation": "System Administrator",
+            "department": "Administration",
+            "avatarInitials": "AS",
+            "status": "ACTIVE"
+        },
+        {
+            "id": "USR1002",
+            "employeeId": "EMP1002",
+            "firstName": "Priya",
+            "lastName": "Verma",
+            "displayName": "Priya Verma",
+            "email": "hr@worksphere.com",
+            "password": "Hr@12345",
+            "roleId": "ROLE_HR",
+            "tenantId": "TENANT1001",
+            "designation": "HR Executive",
+            "department": "Human Resources",
+            "avatarInitials": "PV",
+            "status": "ACTIVE"
+        },
+        {
+            "id": "USR1003",
+            "employeeId": "EMP1003",
+            "firstName": "Rahul",
+            "lastName": "Mehta",
+            "displayName": "Rahul Mehta",
+            "email": "manager@worksphere.com",
+            "password": "Manager@12345",
+            "roleId": "ROLE_MANAGER",
+            "tenantId": "TENANT1001",
+            "designation": "Engineering Manager",
+            "department": "Engineering",
+            "avatarInitials": "RM",
+            "status": "ACTIVE"
+        },
+        {
+            "id": "USR1004",
+            "employeeId": "EMP1004",
+            "firstName": "Neha",
+            "lastName": "Patel",
+            "displayName": "Neha Patel",
+            "email": "employee@worksphere.com",
+            "password": "Employee@12345",
+            "roleId": "ROLE_EMPLOYEE",
+            "tenantId": "TENANT1001",
+            "designation": "Software Developer",
+            "department": "Engineering",
+            "avatarInitials": "NP",
+            "status": "ACTIVE"
+        }
+    ]
+}

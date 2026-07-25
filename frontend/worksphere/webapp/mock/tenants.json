@@ -1,0 +1,14 @@
+{
+    "tenants": [
+        {
+            "id": "TENANT1001",
+            "name": "WorkSphere Technologies",
+            "code": "WST",
+            "domain": "worksphere.com",
+            "status": "ACTIVE",
+            "subscriptionPlan": "ENTERPRISE",
+            "country": "India",
+            "timezone": "Asia/Kolkata"
+        }
+    ]
+}

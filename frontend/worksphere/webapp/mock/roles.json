@@ -1,0 +1,88 @@
+{
+    "roles": [
+        {
+            "id": "ROLE_ADMIN",
+            "name": "Admin",
+            "description": "Full administrative access to the WorkSphere tenant.",
+            "permissions": [
+                "dashboard.admin.read",
+                "employees.read",
+                "employees.create",
+                "employees.update",
+                "employees.delete",
+                "organization.read",
+                "organization.manage",
+                "projects.read",
+                "projects.create",
+                "projects.update",
+                "projects.delete",
+                "assets.read",
+                "assets.create",
+                "assets.update",
+                "assets.delete",
+                "leave.read",
+                "leave.approve",
+                "reports.read",
+                "users.read",
+                "users.create",
+                "users.update",
+                "users.delete",
+                "roles.read",
+                "roles.manage",
+                "settings.read",
+                "settings.manage"
+            ]
+        },
+        {
+            "id": "ROLE_HR",
+            "name": "HR",
+            "description": "Manages employees, organization data, attendance, leave and HR reports.",
+            "permissions": [
+                "dashboard.hr.read",
+                "employees.read",
+                "employees.create",
+                "employees.update",
+                "organization.read",
+                "attendance.read",
+                "attendance.manage",
+                "leave.read",
+                "leave.approve",
+                "reports.hr.read"
+            ]
+        },
+        {
+            "id": "ROLE_MANAGER",
+            "name": "Manager",
+            "description": "Manages teams, projects, performance and employee approvals.",
+            "permissions": [
+                "dashboard.manager.read",
+                "team.read",
+                "team.manage",
+                "projects.read",
+                "projects.create",
+                "projects.update",
+                "performance.read",
+                "performance.update",
+                "leave.team.read",
+                "leave.approve",
+                "approvals.read",
+                "approvals.manage"
+            ]
+        },
+        {
+            "id": "ROLE_EMPLOYEE",
+            "name": "Employee",
+            "description": "Access to personal information, leave, assigned assets and learning.",
+            "permissions": [
+                "dashboard.employee.read",
+                "profile.read",
+                "profile.update",
+                "leave.self.read",
+                "leave.create",
+                "assets.self.read",
+                "learning.read",
+                "projects.assigned.read"
+            ]
+        }
+    ]
+}
