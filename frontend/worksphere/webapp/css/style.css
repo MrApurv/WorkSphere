@@ -1,1 +1,199 @@
-/* Enter your custom styles here */
+/* ========================================================= */
+/* WorkSphere Login Page                                     */
+/* ========================================================= */
+
+.wsLoginPage,
+.wsLoginPage .sapMPage,
+.wsLoginPage .sapMPageEnableScrolling,
+.wsLoginPage .sapMPageScroll {
+    width: 100%;
+    height: 100%;
+}
+
+.wsLoginPage {
+    background: #f5f7fa;
+}
+
+.wsLoginLayout {
+    min-height: 100vh;
+}
+
+/* ========================================================= */
+/* Branding Section                                          */
+/* ========================================================= */
+
+.wsBrandingSection {
+    box-sizing: border-box;
+    padding: 4rem 5rem;
+    background:
+        radial-gradient(circle at top right,
+            rgba(255, 255, 255, 0.18),
+            transparent 35%),
+        linear-gradient(135deg,
+            #12344d 0%,
+            #0a6ed1 100%);
+}
+
+.wsBrandLabel {
+    margin-bottom: 1.5rem;
+    color: #ffffff;
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.18rem;
+}
+
+.wsBrandTitle {
+    max-width: 38rem;
+    margin-bottom: 1.25rem;
+    color: #ffffff;
+    font-size: 2.75rem;
+    line-height: 1.15;
+}
+
+.wsBrandDescription {
+    max-width: 36rem;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 1.125rem;
+    line-height: 1.7;
+}
+
+.wsFeatureList {
+    margin-top: 2.5rem;
+}
+
+.wsFeatureItem {
+    margin-bottom: 1rem;
+}
+
+.wsFeatureIcon {
+    width: 2rem;
+    margin-right: 0.75rem;
+    color: #ffffff;
+    font-size: 1.25rem;
+}
+
+.wsFeatureText {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+}
+
+/* ========================================================= */
+/* Login Form Section                                        */
+/* ========================================================= */
+
+.wsLoginFormSection {
+    box-sizing: border-box;
+    padding: 2.5rem;
+    background: #f5f7fa;
+}
+
+.wsLoginCard {
+    box-sizing: border-box;
+    padding: 2.5rem;
+    border: 1px solid #e5eaf0;
+    border-radius: 1rem;
+    background: #ffffff;
+    box-shadow: 0 1rem 3rem rgba(22, 34, 51, 0.08);
+}
+
+.wsMobileBrandName {
+    display: none;
+    margin-bottom: 1.5rem;
+    color: #0a6ed1;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.wsLoginTitle {
+    margin-bottom: 0.5rem;
+    color: #1d2d3e;
+}
+
+.wsLoginSubtitle {
+    margin-bottom: 2rem;
+    color: #556b82;
+    line-height: 1.5;
+}
+
+.wsFormField {
+    margin-bottom: 1.25rem;
+}
+
+.wsInputLabel {
+    margin-bottom: 0.5rem;
+    color: #25364a;
+    font-weight: 600;
+}
+
+.wsLoginOptions {
+    margin-top: 0.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.wsSignInButton {
+    margin-bottom: 1.5rem;
+}
+
+.wsSignInButton .sapMBtnInner {
+    height: 2.75rem;
+    border-radius: 0.5rem;
+}
+
+.wsSecurityMessage {
+    margin-bottom: 1.5rem;
+}
+
+.wsSecurityIcon {
+    margin-right: 0.5rem;
+    color: #5b738b;
+}
+
+.wsSecurityText {
+    color: #5b738b;
+    font-size: 0.875rem;
+}
+
+.wsLoginFooter {
+    color: #7a8b9a;
+    font-size: 0.75rem;
+}
+
+/* ========================================================= */
+/* Responsive Layout                                         */
+/* ========================================================= */
+
+@media only screen and (max-width: 900px) {
+    .wsBrandingSection {
+        display: none;
+    }
+
+    .wsLoginFormSection {
+        width: 100% !important;
+        padding: 2rem;
+    }
+
+    .wsLoginCard {
+        width: 100% !important;
+        max-width: 28rem;
+    }
+
+    .wsMobileBrandName {
+        display: block;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .wsLoginFormSection {
+        padding: 1rem;
+    }
+
+    .wsLoginCard {
+        padding: 1.5rem;
+        border-radius: 0.75rem;
+    }
+
+    .wsLoginOptions {
+        flex-wrap: wrap;
+        gap: 0.75rem;
+    }
+}
