@@ -23,7 +23,7 @@
                     id="brandingSection"
                     width="55%"
                     justifyContent="Center"
-                    alignItems="Start"
+                    alignItems="start"
                     class="wsBrandingSection">
 
                     <Text

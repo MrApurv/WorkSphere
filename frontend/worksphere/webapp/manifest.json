@@ -63,35 +63,29 @@
     "routing": {
       "config": {
         "routerClass": "sap.m.routing.Router",
-        "controlAggregation": "pages",
-        "controlId": "app",
-        "transition": "slide",
-        "type": "View",
         "viewType": "XML",
-        "path": "com.apurv.worksphere.view",
-        "async": true,
-        "viewPath": "com.apurv.worksphere.view"
+        "viewPath": "com.apurv.worksphere.view",
+        "controlId": "app",
+        "controlAggregation": "pages",
+        "async": true
       },
       "routes": [
         {
-          "name": "RouteApp",
-          "pattern": ":?query:",
-          "target": [
-            "TargetApp"
-          ]
+          "name": "login",
+          "pattern": "",
+          "target": "login"
         }
       ],
       "targets": {
-        "TargetApp": {
-          "id": "App",
-          "name": "App"
+        "login": {
+          "viewName": "Login"
         }
       }
     },
     "rootView": {
       "viewName": "com.apurv.worksphere.view.App",
       "type": "XML",
-      "id": "App",
+      "id": "app",
       "async": true
     }
   }

@@ -135,8 +135,13 @@
 }
 
 .wsSignInButton .sapMBtnInner {
-    height: 2.75rem;
-    border-radius: 0.5rem;
+    height: 3rem;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .wsSecurityMessage {
