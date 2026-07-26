@@ -1,6 +1,7 @@
 <mvc:View
     controllerName="com.apurv.worksphere.controller.Login"
     xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
     xmlns="sap.m">
 
     <Page
@@ -18,12 +19,12 @@
                 alignItems="Stretch"
                 class="wsLoginLayout">
 
-                <!-- WorkSphere branding section -->
+                <!-- Branding section -->
                 <VBox
                     id="brandingSection"
                     width="55%"
                     justifyContent="Center"
-                    alignItems="start"
+                    alignItems="Start"
                     class="wsBrandingSection">
 
                     <Text
@@ -37,7 +38,7 @@
                         class="wsBrandTitle" />
 
                     <Text
-                        text="An AI-powered Enterprise Employee Management Platform built using modern SAP technologies."
+                        text="An AI-powered enterprise employee management platform built using modern SAP technologies."
                         wrapping="true"
                         class="wsBrandDescription" />
 
@@ -49,11 +50,11 @@
 
                             <core:Icon
                                 src="sap-icon://employee"
-                                class="wsFeatureIcon"
-                                xmlns:core="sap.ui.core" />
+                                class="wsFeatureIcon" />
 
                             <Text
                                 text="Centralized employee management"
+                                wrapping="true"
                                 class="wsFeatureText" />
 
                         </HBox>
@@ -64,11 +65,11 @@
 
                             <core:Icon
                                 src="sap-icon://business-objects-experience"
-                                class="wsFeatureIcon"
-                                xmlns:core="sap.ui.core" />
+                                class="wsFeatureIcon" />
 
                             <Text
                                 text="Workforce analytics and intelligent insights"
+                                wrapping="true"
                                 class="wsFeatureText" />
 
                         </HBox>
@@ -79,11 +80,11 @@
 
                             <core:Icon
                                 src="sap-icon://collaborate"
-                                class="wsFeatureIcon"
-                                xmlns:core="sap.ui.core" />
+                                class="wsFeatureIcon" />
 
                             <Text
                                 text="AI-assisted HR and workforce decisions"
+                                wrapping="true"
                                 class="wsFeatureText" />
 
                         </HBox>
@@ -119,23 +120,25 @@
                             wrapping="true"
                             class="wsLoginSubtitle" />
 
+                        <!-- Email field -->
                         <VBox class="wsFormField">
 
                             <Label
-                                text="Email or User ID"
-                                labelFor="usernameInput"
+                                text="Work Email"
+                                labelFor="emailInput"
                                 class="wsInputLabel" />
 
                             <Input
-                                id="usernameInput"
-                                width="100%"
+                                id="emailInput"
+                                value="{login>/email}"
                                 type="Email"
-                                placeholder="Enter your email or user ID"
-                                valueLiveUpdate="true"
-                                liveChange=".onUsernameLiveChange" />
+                                placeholder="name@company.com"
+                                enabled="{= !${login>/busy} }"
+                                liveChange=".onEmailLiveChange" />
 
                         </VBox>
 
+                        <!-- Password field -->
                         <VBox class="wsFormField">
 
                             <Label
@@ -145,13 +148,16 @@
 
                             <Input
                                 id="passwordInput"
-                                width="100%"
+                                value="{login>/password}"
                                 type="Password"
                                 placeholder="Enter your password"
-                                submit=".onSignIn" />
+                                enabled="{= !${login>/busy} }"
+                                liveChange=".onPasswordLiveChange"
+                                submit=".onPasswordSubmit" />
 
                         </VBox>
 
+                        <!-- Remember me and forgot password -->
                         <HBox
                             width="100%"
                             justifyContent="SpaceBetween"
@@ -161,22 +167,46 @@
                             <CheckBox
                                 id="rememberMeCheckBox"
                                 text="Remember me"
-                                selected="false" />
+                                selected="{login>/rememberMe}"
+                                enabled="{= !${login>/busy} }" />
 
                             <Link
                                 text="Forgot password?"
-                                press=".onForgotPassword" />
+                                press=".onForgotPassword"
+                                enabled="{= !${login>/busy} }" />
 
                         </HBox>
 
+                        <!-- Sign-in button -->
                         <Button
                             id="signInButton"
                             text="Sign In"
                             type="Emphasized"
                             width="100%"
                             press=".onSignIn"
+                            visible="{= !${login>/busy} }"
                             class="wsSignInButton" />
 
+                        <!-- Loading state -->
+                        <HBox
+                            width="100%"
+                            height="3rem"
+                            justifyContent="Center"
+                            alignItems="Center"
+                            visible="{login>/busy}"
+                            class="wsSigningInContainer">
+
+                            <BusyIndicator
+                                size="1rem"
+                                class="wsSigningInIndicator" />
+
+                            <Text
+                                text="Signing in..."
+                                class="wsSigningInText" />
+
+                        </HBox>
+
+                        <!-- Security message -->
                         <HBox
                             justifyContent="Center"
                             alignItems="Center"
@@ -184,8 +214,7 @@
 
                             <core:Icon
                                 src="sap-icon://locked"
-                                class="wsSecurityIcon"
-                                xmlns:core="sap.ui.core" />
+                                class="wsSecurityIcon" />
 
                             <Text
                                 text="Secure enterprise access"

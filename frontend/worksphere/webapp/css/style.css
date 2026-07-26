@@ -5,7 +5,8 @@
 .wsLoginPage,
 .wsLoginPage .sapMPage,
 .wsLoginPage .sapMPageEnableScrolling,
-.wsLoginPage .sapMPageScroll {
+.wsLoginPage .sapMPageScroll,
+.wsLoginPage .sapMPageScrollCont {
     width: 100%;
     height: 100%;
 }
@@ -15,6 +16,7 @@
 }
 
 .wsLoginLayout {
+    width: 100%;
     min-height: 100vh;
 }
 
@@ -25,6 +27,7 @@
 .wsBrandingSection {
     box-sizing: border-box;
     padding: 4rem 5rem;
+    overflow: hidden;
     background:
         radial-gradient(circle at top right,
             rgba(255, 255, 255, 0.18),
@@ -66,6 +69,7 @@
 }
 
 .wsFeatureIcon {
+    flex-shrink: 0;
     width: 2rem;
     margin-right: 0.75rem;
     color: #ffffff;
@@ -75,6 +79,7 @@
 .wsFeatureText {
     color: rgba(255, 255, 255, 0.9);
     font-size: 1rem;
+    line-height: 1.5;
 }
 
 /* ========================================================= */
@@ -84,6 +89,7 @@
 .wsLoginFormSection {
     box-sizing: border-box;
     padding: 2.5rem;
+    overflow-y: auto;
     background: #f5f7fa;
 }
 
@@ -135,13 +141,28 @@
 }
 
 .wsSignInButton .sapMBtnInner {
+    display: flex;
     height: 3rem;
+    align-items: center;
+    justify-content: center;
     border-radius: 0.75rem;
     font-size: 1rem;
     font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+}
+
+.wsSigningInContainer {
+    box-sizing: border-box;
+    margin-bottom: 1.5rem;
+}
+
+.wsSigningInIndicator {
+    margin-right: 0.75rem;
+}
+
+.wsSigningInText {
+    color: #445b70;
+    font-size: 0.95rem;
+    font-weight: 600;
 }
 
 .wsSecurityMessage {
@@ -193,6 +214,7 @@
     }
 
     .wsLoginCard {
+        width: 100% !important;
         padding: 1.5rem;
         border-radius: 0.75rem;
     }
@@ -200,5 +222,351 @@
     .wsLoginOptions {
         flex-wrap: wrap;
         gap: 0.75rem;
+    }
+
+    .wsBrandTitle {
+        font-size: 2rem;
+    }
+}
+
+/* ========================================================= */
+/* WorkSphere Application Shell                              */
+/* ========================================================= */
+
+.wsShellPage,
+.wsShellPage .sapMPage,
+.wsShellPage .sapMPageScroll,
+.wsShellPage .sapMPageScrollCont {
+    width: 100%;
+    height: 100%;
+}
+
+.wsShellPage {
+    background: #f4f6f8;
+}
+
+.wsShellLayout {
+    min-height: 100vh;
+    background: #f4f6f8;
+}
+
+/* ========================================================= */
+/* Shell Header                                              */
+/* ========================================================= */
+
+.wsShellHeader {
+    min-height: 4rem;
+    padding-right: 1.25rem;
+    padding-left: 1rem;
+    border-bottom: 1px solid #e2e7ec;
+    background: #ffffff;
+    box-shadow: 0 0.125rem 0.5rem rgba(21, 35, 50, 0.05);
+}
+
+.wsShellBrand {
+    margin-left: 0.5rem;
+    color: #12344d;
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.wsHeaderUserDetails {
+    margin-right: 0.75rem;
+}
+
+.wsHeaderUserName {
+    color: #1d2d3e;
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.wsHeaderUserRole {
+    color: #66788a;
+    font-size: 0.75rem;
+}
+
+.wsHeaderAvatar {
+    margin-right: 0.5rem;
+}
+
+.wsLogoutButton {
+    margin-left: 0.25rem;
+}
+
+/* ========================================================= */
+/* Shell Body                                                */
+/* ========================================================= */
+
+.wsShellBody {
+    min-height: 0;
+    flex: 1;
+}
+
+/* ========================================================= */
+/* Side Navigation                                           */
+/* ========================================================= */
+
+.wsSideNavigationContainer {
+    box-sizing: border-box;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-right: 1px solid #e1e7ed;
+    background: #ffffff;
+    transition: width 0.25s ease;
+}
+
+.wsTenantSection {
+    display: flex;
+    box-sizing: border-box;
+    min-height: 5rem;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #edf0f3;
+}
+
+.wsTenantAvatar {
+    flex-shrink: 0;
+    margin-right: 0.75rem;
+}
+
+.wsTenantDetails {
+    min-width: 0;
+}
+
+.wsTenantName {
+    max-width: 11rem;
+    overflow: hidden;
+    color: #1d2d3e;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.wsTenantDepartment {
+    max-width: 11rem;
+    overflow: hidden;
+    color: #6a7c8e;
+    font-size: 0.75rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.wsNavigationList {
+    border: none;
+    background: transparent;
+}
+
+.wsNavigationList .sapMLIB {
+    min-height: 3rem;
+    margin: 0.25rem 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: transparent;
+}
+
+.wsNavigationList .sapMLIBSelected {
+    background: #eaf3fc;
+}
+
+.wsNavigationList .sapMLIBSelected .sapMSLITitleOnly {
+    color: #0a6ed1;
+    font-weight: 600;
+}
+
+.wsSideNavigationCollapsed .wsTenantDetails,
+.wsSideNavigationCollapsed .sapMSLITitleOnly {
+    display: none;
+}
+
+.wsSideNavigationCollapsed .wsTenantSection {
+    justify-content: center;
+    padding-right: 0;
+    padding-left: 0;
+}
+
+.wsSideNavigationCollapsed .wsTenantAvatar {
+    margin-right: 0;
+}
+
+.wsSideNavigationCollapsed .sapMLIB {
+    margin-right: 0.5rem;
+    margin-left: 0.5rem;
+}
+
+/* ========================================================= */
+/* Dashboard Content                                         */
+/* ========================================================= */
+
+.wsShellContent {
+    flex: 1;
+    background: #f4f6f8;
+}
+
+.wsDashboardContent {
+    box-sizing: border-box;
+    max-width: 90rem;
+    padding: 2rem;
+    margin: 0 auto;
+}
+
+.wsDashboardLabel {
+    margin-bottom: 0.5rem;
+    color: #0a6ed1;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+.wsDashboardTitle {
+    color: #1c2b39;
+    font-size: 2rem;
+}
+
+.wsDashboardSubtitle {
+    margin-top: 0.5rem;
+    color: #637588;
+    font-size: 1rem;
+}
+
+.wsDashboardCards {
+    gap: 1rem;
+    margin-top: 2rem;
+}
+
+.wsDashboardCard {
+    box-sizing: border-box;
+    min-width: 15rem;
+    flex: 1 1 15rem;
+    padding: 1.5rem;
+    border: 1px solid #e3e8ed;
+    border-radius: 0.75rem;
+    background: #ffffff;
+    box-shadow: 0 0.375rem 1.25rem rgba(24, 45, 65, 0.05);
+}
+
+.wsCardLabel {
+    margin-bottom: 0.5rem;
+    color: #6b7c8d;
+    font-size: 0.8125rem;
+}
+
+.wsCardValue {
+    color: #1d2d3e;
+    font-size: 1.25rem;
+}
+
+.wsCardIcon {
+    color: #0a6ed1;
+    font-size: 2rem;
+}
+
+.wsDashboardWelcomeCard {
+    box-sizing: border-box;
+    padding: 2rem;
+    margin-top: 1.5rem;
+    border: 1px solid #e3e8ed;
+    border-radius: 0.75rem;
+    background: #ffffff;
+    box-shadow: 0 0.375rem 1.25rem rgba(24, 45, 65, 0.05);
+}
+
+.wsWelcomeCardTitle {
+    margin-bottom: 0.75rem;
+    color: #1d2d3e;
+}
+
+.wsWelcomeCardDescription {
+    max-width: 50rem;
+    color: #637588;
+    line-height: 1.6;
+}
+
+.wsWelcomeUser {
+    margin-top: 1.5rem;
+}
+
+.wsWelcomeUserDetails {
+    margin-left: 0.75rem;
+}
+
+.wsWelcomeUserName {
+    color: #1d2d3e;
+    font-weight: 600;
+}
+
+.wsWelcomeUserEmail {
+    margin-top: 0.125rem;
+    color: #6d7e8f;
+    font-size: 0.8125rem;
+}
+
+/* ========================================================= */
+/* Shell Responsive Layout                                   */
+/* ========================================================= */
+
+@media only screen and (max-width: 768px) {
+    .wsHeaderUserDetails {
+        display: none;
+    }
+
+    .wsLogoutButton .sapMBtnContent {
+        display: none;
+    }
+
+    .wsSideNavigationContainer {
+        width: 4.5rem !important;
+    }
+
+    .wsTenantDetails,
+    .wsNavigationList .sapMSLITitleOnly {
+        display: none;
+    }
+
+    .wsTenantSection {
+        justify-content: center;
+        padding-right: 0;
+        padding-left: 0;
+    }
+
+    .wsTenantAvatar {
+        margin-right: 0;
+    }
+
+    .wsDashboardContent {
+        padding: 1.25rem;
+    }
+
+    .wsDashboardTitle {
+        font-size: 1.6rem;
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .wsShellHeader {
+        padding-right: 0.5rem;
+        padding-left: 0.25rem;
+    }
+
+    .wsShellBrand {
+        font-size: 1rem;
+    }
+
+    .wsHeaderAvatar {
+        display: none;
+    }
+
+    .wsDashboardContent {
+        padding: 1rem;
+    }
+
+    .wsDashboardCard {
+        min-width: 100%;
+    }
+
+    .wsDashboardWelcomeCard {
+        padding: 1.5rem;
     }
 }

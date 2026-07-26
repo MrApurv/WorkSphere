@@ -38,7 +38,8 @@
       "minUI5Version": "1.150.0",
       "libs": {
         "sap.m": {},
-        "sap.ui.core": {}
+        "sap.ui.core": {},
+        "sap.tnt": {}
       }
     },
     "contentDensities": {
@@ -71,14 +72,29 @@
       },
       "routes": [
         {
-          "name": "login",
+          "name": "RouteLogin",
           "pattern": "",
-          "target": "login"
+          "target": "TargetLogin"
+        },
+        {
+          "name": "RouteLoginWithPath",
+          "pattern": "login",
+          "target": "TargetLogin"
+        },
+        {
+          "name": "RouteShell",
+          "pattern": "shell",
+          "target": "TargetShell"
         }
       ],
       "targets": {
-        "login": {
-          "viewName": "Login"
+        "TargetLogin": {
+          "viewName": "Login",
+          "viewLevel": 1
+        },
+        "TargetShell": {
+          "viewName": "Shell",
+          "viewLevel": 2
         }
       }
     },

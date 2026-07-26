@@ -1,9 +1,8 @@
-<mvc:View controllerName="com.apurv.worksphere.controller.App"
+<mvc:View
+    controllerName="com.apurv.worksphere.controller.App"
     xmlns:mvc="sap.ui.core.mvc"
-    xmlns="sap.m"
-    xmlns:tnt="sap.tnt"
-    xmlns:f="sap.f">
+    xmlns="sap.m">
 
-    <App id="app"/>
+    <App id="app" />
 
 </mvc:View>

@@ -1,0 +1,321 @@
+<mvc:View
+    controllerName="com.apurv.worksphere.controller.Shell"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    xmlns="sap.m">
+
+    <Page
+        id="shellPage"
+        showHeader="false"
+        enableScrolling="false"
+        class="wsShellPage">
+
+        <content>
+
+            <VBox
+                width="100%"
+                height="100%"
+                class="wsShellLayout">
+
+                <!-- Top application header -->
+                <Toolbar
+                    id="shellHeader"
+                    class="wsShellHeader">
+
+                    <Button
+                        id="menuButton"
+                        icon="sap-icon://menu2"
+                        type="Transparent"
+                        tooltip="Toggle navigation"
+                        press=".onToggleNavigation" />
+
+                    <Title
+                        text="WorkSphere"
+                        level="H2"
+                        class="wsShellBrand" />
+
+                    <ToolbarSpacer />
+
+                    <VBox
+                        alignItems="End"
+                        class="wsHeaderUserDetails">
+
+                        <Text
+                            text="{user>/currentUser/displayName}"
+                            class="wsHeaderUserName" />
+
+                        <Text
+                            text="{user>/currentUser/role}"
+                            class="wsHeaderUserRole" />
+
+                    </VBox>
+
+                    <Avatar
+                        initials="{user>/currentUser/avatarInitials}"
+                        displaySize="S"
+                        displayShape="Circle"
+                        tooltip="{user>/currentUser/displayName}"
+                        class="wsHeaderAvatar" />
+
+                    <Button
+                        icon="sap-icon://log"
+                        text="Logout"
+                        type="Transparent"
+                        tooltip="Logout"
+                        press=".onLogout"
+                        class="wsLogoutButton" />
+
+                </Toolbar>
+
+                <!-- Shell body -->
+                <HBox
+                    width="100%"
+                    height="100%"
+                    alignItems="Stretch"
+                    class="wsShellBody">
+
+                    <!-- Side navigation -->
+                    <VBox
+                        id="sideNavigationContainer"
+                        width="16rem"
+                        class="wsSideNavigationContainer">
+
+                        <VBox
+                            class="wsTenantSection">
+
+                            <Avatar
+                                initials="WS"
+                                displaySize="S"
+                                displayShape="Square"
+                                class="wsTenantAvatar" />
+
+                            <VBox class="wsTenantDetails">
+
+                                <Text
+                                    text="{user>/currentUser/tenantName}"
+                                    wrapping="false"
+                                    class="wsTenantName" />
+
+                                <Text
+                                    text="{user>/currentUser/department}"
+                                    wrapping="false"
+                                    class="wsTenantDepartment" />
+
+                            </VBox>
+
+                        </VBox>
+
+                        <List
+                            id="navigationList"
+                            mode="SingleSelectMaster"
+                            includeItemInSelection="true"
+                            selectionChange=".onNavigationItemSelect"
+                            class="wsNavigationList">
+
+                            <StandardListItem
+                                id="dashboardNavigationItem"
+                                title="Dashboard"
+                                icon="sap-icon://home"
+                                type="Active"
+                                selected="true"
+                                data-key="dashboard" />
+
+                            <StandardListItem
+                                title="Employees"
+                                icon="sap-icon://employee"
+                                type="Active"
+                                data-key="employees" />
+
+                            <StandardListItem
+                                title="Projects"
+                                icon="sap-icon://project-definition-triangle-2"
+                                type="Active"
+                                data-key="projects" />
+
+                            <StandardListItem
+                                title="Leave Management"
+                                icon="sap-icon://calendar"
+                                type="Active"
+                                data-key="leave" />
+
+                            <StandardListItem
+                                title="Reports"
+                                icon="sap-icon://business-objects-experience"
+                                type="Active"
+                                data-key="reports" />
+
+                            <StandardListItem
+                                title="Settings"
+                                icon="sap-icon://action-settings"
+                                type="Active"
+                                data-key="settings" />
+
+                        </List>
+
+                    </VBox>
+
+                    <!-- Main content -->
+                    <ScrollContainer
+                        width="100%"
+                        height="100%"
+                        vertical="true"
+                        horizontal="false"
+                        class="wsShellContent">
+
+                        <VBox
+                            width="100%"
+                            class="wsDashboardContent">
+
+                            <Text
+                                text="Dashboard"
+                                class="wsDashboardLabel" />
+
+                            <Title
+                                text="{= 'Welcome back, ' + ${user>/currentUser/firstName} }"
+                                level="H1"
+                                wrapping="true"
+                                class="wsDashboardTitle" />
+
+                            <Text
+                                text="{= ${user>/currentUser/designation} + ' • ' + ${user>/currentUser/department} }"
+                                wrapping="true"
+                                class="wsDashboardSubtitle" />
+
+                            <HBox
+                                width="100%"
+                                wrap="Wrap"
+                                class="wsDashboardCards">
+
+                                <VBox class="wsDashboardCard">
+
+                                    <HBox
+                                        justifyContent="SpaceBetween"
+                                        alignItems="Center">
+
+                                        <VBox>
+
+                                            <Text
+                                                text="Employee ID"
+                                                class="wsCardLabel" />
+
+                                            <Title
+                                                text="{user>/currentUser/employeeId}"
+                                                level="H3"
+                                                class="wsCardValue" />
+
+                                        </VBox>
+
+                                        <core:Icon
+                                            src="sap-icon://employee"
+                                            class="wsCardIcon" />
+
+                                    </HBox>
+
+                                </VBox>
+
+                                <VBox class="wsDashboardCard">
+
+                                    <HBox
+                                        justifyContent="SpaceBetween"
+                                        alignItems="Center">
+
+                                        <VBox>
+
+                                            <Text
+                                                text="Role"
+                                                class="wsCardLabel" />
+
+                                            <Title
+                                                text="{user>/currentUser/role}"
+                                                level="H3"
+                                                class="wsCardValue" />
+
+                                        </VBox>
+
+                                        <core:Icon
+                                            src="sap-icon://key-user-settings"
+                                            class="wsCardIcon" />
+
+                                    </HBox>
+
+                                </VBox>
+
+                                <VBox class="wsDashboardCard">
+
+                                    <HBox
+                                        justifyContent="SpaceBetween"
+                                        alignItems="Center">
+
+                                        <VBox>
+
+                                            <Text
+                                                text="Organization"
+                                                class="wsCardLabel" />
+
+                                            <Title
+                                                text="{user>/currentUser/tenantCode}"
+                                                level="H3"
+                                                class="wsCardValue" />
+
+                                        </VBox>
+
+                                        <core:Icon
+                                            src="sap-icon://building"
+                                            class="wsCardIcon" />
+
+                                    </HBox>
+
+                                </VBox>
+
+                            </HBox>
+
+                            <VBox class="wsDashboardWelcomeCard">
+
+                                <Title
+                                    text="Your WorkSphere workspace is ready"
+                                    level="H2"
+                                    class="wsWelcomeCardTitle" />
+
+                                <Text
+                                    text="Use the navigation menu to access employee management, projects, leave requests, reports and organization settings."
+                                    wrapping="true"
+                                    class="wsWelcomeCardDescription" />
+
+                                <HBox
+                                    alignItems="Center"
+                                    class="wsWelcomeUser">
+
+                                    <Avatar
+                                        initials="{user>/currentUser/avatarInitials}"
+                                        displaySize="M"
+                                        displayShape="Circle" />
+
+                                    <VBox class="wsWelcomeUserDetails">
+
+                                        <Text
+                                            text="{user>/currentUser/displayName}"
+                                            class="wsWelcomeUserName" />
+
+                                        <Text
+                                            text="{user>/currentUser/email}"
+                                            class="wsWelcomeUserEmail" />
+
+                                    </VBox>
+
+                                </HBox>
+
+                            </VBox>
+
+                        </VBox>
+
+                    </ScrollContainer>
+
+                </HBox>
+
+            </VBox>
+
+        </content>
+
+    </Page>
+
+</mvc:View>
